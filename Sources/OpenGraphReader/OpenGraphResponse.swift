@@ -9,7 +9,7 @@ import Foundation
 
 /// Represents the response containing OpenGraph data extracted from a source.
 public struct OpenGraphResponse {
-    private let source: [String: [String]]
+    public let source: [String: [String]]
     
     /// Initializes an instance of `OpenGraphResponse`.
     /// - Parameter source: The source dictionary containing OpenGraph data.
