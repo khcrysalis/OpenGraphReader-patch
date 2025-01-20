@@ -111,45 +111,45 @@ public extension OpenGraphResponse {
     /// Retrieves an array of values associated with the specified key from the source.
     /// - Parameter key: The key for which to retrieve the array of values.
     /// - Returns: An array of values associated with the key, if present; otherwise, `nil`.
-    func arrayValue(_ key: String) -> [String]? {
+    public func arrayValue(_ key: String) -> [String]? {
         source[key]
     }
     
     /// Retrieves a string value associated with the specified key from the source.
     /// - Parameter key: The key for which to retrieve the string value.
     /// - Returns: A string value associated with the key, if present; otherwise, `nil`.
-    func stringValue(_ key: String) -> String? {
+    public func stringValue(_ key: String) -> String? {
         source.stringValue(key)
     }
     
     /// Retrieves a double value associated with the specified key from the source.
     /// - Parameter key: The key for which to retrieve the double value.
     /// - Returns: A double value associated with the key, if present; otherwise, `nil`.
-    func doubleValue(_ key: String) -> Double? {
+    public func doubleValue(_ key: String) -> Double? {
         source.doubleValue(key)
     }
     
     /// Retrieves a URL value associated with the specified key from the source.
     /// - Parameter key: The key for which to retrieve the URL value.
     /// - Returns: A URL value associated with the key, if present; otherwise, `nil`.
-    func urlValue(_ key: String) -> URL? {
+    public func urlValue(_ key: String) -> URL? {
         source.urlValue(key)
     }
 }
 
 private extension Dictionary where Element == (key: String, value: [String]) {
-    func stringValue(_ key: String) -> String? {
+    public func stringValue(_ key: String) -> String? {
         self[key]?.first
     }
     
-    func doubleValue(_ key: String) -> Double? {
+    public func doubleValue(_ key: String) -> Double? {
         guard let doubleValue = self[key]?.first else {
             return nil
         }
         return Double(doubleValue)
     }
     
-    func urlValue(_ key: String) -> URL? {
+    public func urlValue(_ key: String) -> URL? {
         guard let string = self[key]?.first else {
             return nil
         }
